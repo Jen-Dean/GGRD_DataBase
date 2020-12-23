@@ -18,8 +18,6 @@ CREATE TABLE "team" (
     "team_id" INT   NOT NULL,
     "league_id" INT   NOT NULL,
     "team_name" VARCHAR   NOT NULL,
-    "team_type" VARCHAR   NOT NULL,
-    "team_strength_factor" DEC   NOT NULL,
     CONSTRAINT "pk_team" PRIMARY KEY (
         "team_id"
      ),
@@ -33,7 +31,7 @@ CREATE TABLE "game" (
     "home_team_id" INT   NOT NULL,
     "away_team_id" INT   NOT NULL,
     "wining_team_id" INT   NOT NULL,
-    "date_played" DATE   NOT NULL,
+    "timestamp" TIMESTAMP   NOT NULL,
     CONSTRAINT "pk_game" PRIMARY KEY (
         "game_id"
      )
