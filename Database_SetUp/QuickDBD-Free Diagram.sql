@@ -4,7 +4,7 @@
 
 
 CREATE TABLE "league" (
-    "league_id" INT   NOT NULL,
+    "league_id" SMALLSERIAL   NOT NULL,
     "league_name" VARCHAR   NOT NULL,
     CONSTRAINT "pk_league" PRIMARY KEY (
         "league_id"
@@ -15,7 +15,7 @@ CREATE TABLE "league" (
 );
 
 CREATE TABLE "team" (
-    "team_id" INT   NOT NULL,
+    "team_id" SERIAL   NOT NULL,
     "league_id" INT   NOT NULL,
     "team_name" VARCHAR   NOT NULL,
     CONSTRAINT "pk_team" PRIMARY KEY (
@@ -27,10 +27,10 @@ CREATE TABLE "team" (
 );
 
 CREATE TABLE "game" (
-    "game_id" INT   NOT NULL,
+    "game_id" SERIAL   NOT NULL,
     "home_team_id" INT   NOT NULL,
     "away_team_id" INT   NOT NULL,
-    "wining_team_id" INT   NOT NULL,
+    "winning_team_id" INT   NOT NULL,
     "timestamp" TIMESTAMP   NOT NULL,
     CONSTRAINT "pk_game" PRIMARY KEY (
         "game_id"
@@ -38,7 +38,7 @@ CREATE TABLE "game" (
 );
 
 CREATE TABLE "skater" (
-    "skater_id" INT   NOT NULL,
+    "skater_id" VARCHAR(7)   NOT NULL,
     "skater_name" VARCHAR   NOT NULL,
     "skater_number" INT   NOT NULL,
     CONSTRAINT "pk_skater" PRIMARY KEY (
@@ -50,21 +50,21 @@ CREATE TABLE "skater" (
 );
 
 CREATE TABLE "jams" (
-    "jam_id" INT   NOT NULL,
+    "jam_id" BIGSERIAL   NOT NULL,
     "game_id" INT   NOT NULL,
     "jam_number" INT   NOT NULL,
-    "home_jammer" INT   NOT NULL,
-    "home_pivot" INT   NOT NULL,
-    "home_blocker_1" INT   NOT NULL,
-    "home_blocker_2" INT   NOT NULL,
-    "home_blocker_3" INT   NOT NULL,
+    "home_jammer" VARCHAR(7)   NOT NULL,
+    "home_pivot" VARCHAR(7)   NOT NULL,
+    "home_blocker_1" VARCHAR(7)   NOT NULL,
+    "home_blocker_2" VARCHAR(7)   NOT NULL,
+    "home_blocker_3" VARCHAR(7)   NOT NULL,
     "home_team_points_scored" INT   NOT NULL,
     "away_team_points_scored" INT   NOT NULL,
-    "away_jammer" INT   NOT NULL,
-    "away_pivot" INT   NOT NULL,
-    "away_blocker_1" INT   NOT NULL,
-    "away_blocker_2" INT   NOT NULL,
-    "away_blocker_3" INT   NOT NULL,
+    "away_jammer" VARCHAR(7)   NOT NULL,
+    "away_pivot" VARCHAR(7)   NOT NULL,
+    "away_blocker_1" VARCHAR(7)   NOT NULL,
+    "away_blocker_2" VARCHAR(7)   NOT NULL,
+    "away_blocker_3" VARCHAR(7)   NOT NULL,
     "away_lead" BOOLEAN   NOT NULL,
     "home_lead" BOOLEAN   NOT NULL,
     "lost_lead" BOOLEAN   NOT NULL,
@@ -77,8 +77,8 @@ CREATE TABLE "jams" (
 );
 
 CREATE TABLE "penalties" (
-    "penalty_id" INT   NOT NULL,
-    "skater_id" INT   NOT NULL,
+    "penalty_id" BIGSERIAL   NOT NULL,
+    "skater_id" VARCHAR(7)   NOT NULL,
     "jam_id" INT   NOT NULL,
     "penalty_type" VARCHAR   NOT NULL,
     "occurences" INT   NOT NULL,
