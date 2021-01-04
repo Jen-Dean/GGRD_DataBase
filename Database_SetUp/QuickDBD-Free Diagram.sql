@@ -40,7 +40,7 @@ CREATE TABLE "game" (
 CREATE TABLE "skater" (
     "skater_id" VARCHAR(7)   NOT NULL,
     "skater_name" VARCHAR   NOT NULL,
-    "skater_number" INT   NOT NULL,
+    "skater_number" VARCHAR(4)   NOT NULL,
     CONSTRAINT "pk_skater" PRIMARY KEY (
         "skater_id"
      ),
