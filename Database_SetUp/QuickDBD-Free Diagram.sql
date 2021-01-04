@@ -27,7 +27,7 @@ CREATE TABLE "team" (
 );
 
 CREATE TABLE "game" (
-    "game_id" SERIAL   NOT NULL,
+    "game_id" BIGINT   NOT NULL,
     "home_team_id" INT   NOT NULL,
     "away_team_id" INT   NOT NULL,
     "winning_team_id" INT   NOT NULL,
