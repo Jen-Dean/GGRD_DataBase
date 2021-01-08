@@ -53,6 +53,7 @@ CREATE TABLE "jams" (
     "jam_id" BIGSERIAL   NOT NULL,
     "game_id" INT   NOT NULL,
     "jam_number" INT   NOT NULL,
+    "period_number" INT,
     "home_jammer" VARCHAR(7)   NOT NULL,
     "home_pivot" VARCHAR(7)   NOT NULL,
     "home_blocker_1" VARCHAR(7)   NOT NULL,
