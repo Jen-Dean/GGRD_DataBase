@@ -1,6 +1,5 @@
 # GGRD Stats Database
 > Extracting, Transfering and Loading GGRD Stats
-![GGRD Logo](https://github.com/Jen-Dean/GGRD_DataBase/blob/main/images/GGRD%2BLOGO_Travel%2BTeams_All%2BStars.png)
 
 ## Table of contents
 * [General info](#general-info)
