@@ -31,7 +31,8 @@ We will create 2 different products.
 * Jupyter Notebook
 * Python
 * Excel
-* PostGreSQL
+* PostgreSQL
+* Pandas
 
 ## Setup
 _Coming Soon_
