@@ -4,8 +4,8 @@
 
 
 CREATE TABLE "league" (
-    "league_id" SMALLSERIAL   NOT NULL,
-    "league_name" VARCHAR   NOT NULL,
+    "league_id" SMALLSERIAL   ,
+    "league_name" VARCHAR   ,
     CONSTRAINT "pk_league" PRIMARY KEY (
         "league_id"
      ),
@@ -15,9 +15,9 @@ CREATE TABLE "league" (
 );
 
 CREATE TABLE "team" (
-    "team_id" SERIAL   NOT NULL,
-    "league_id" INT   NOT NULL,
-    "team_name" VARCHAR   NOT NULL,
+    "team_id" SERIAL   ,
+    "league_id" SMALLINT   ,
+    "team_name" VARCHAR   ,
     CONSTRAINT "pk_team" PRIMARY KEY (
         "team_id"
      ),
@@ -27,20 +27,20 @@ CREATE TABLE "team" (
 );
 
 CREATE TABLE "game" (
-    "game_id" BIGINT   NOT NULL,
-    "home_team_id" INT   NOT NULL,
-    "away_team_id" INT   NOT NULL,
-    "winning_team_id" INT   NOT NULL,
-    "timestamp" TIMESTAMP   NOT NULL,
+    "game_id" BIGINT   ,
+    "home_team_id" INT   ,
+    "away_team_id" INT   ,
+    "winning_team_id" INT   ,
+    "timestamp" TIMESTAMP   ,
     CONSTRAINT "pk_game" PRIMARY KEY (
         "game_id"
      )
 );
 
 CREATE TABLE "skater" (
-    "skater_id" VARCHAR(7)   NOT NULL,
-    "skater_name" VARCHAR   NOT NULL,
-    "skater_number" VARCHAR(4)   NOT NULL,
+    "skater_id" BIGSERIAL  ,
+    "skater_name" VARCHAR   ,
+    "skater_number" SMALLINT,
     CONSTRAINT "pk_skater" PRIMARY KEY (
         "skater_id"
      ),
@@ -50,39 +50,39 @@ CREATE TABLE "skater" (
 );
 
 CREATE TABLE "jams" (
-    "jam_id" BIGSERIAL   NOT NULL,
-    "game_id" INT   NOT NULL,
-    "jam_number" INT   NOT NULL,
-    "period_number" INT,
-    "home_jammer" VARCHAR(7)   NOT NULL,
-    "home_pivot" VARCHAR(7)   NOT NULL,
-    "home_blocker_1" VARCHAR(7)   NOT NULL,
-    "home_blocker_2" VARCHAR(7)   NOT NULL,
-    "home_blocker_3" VARCHAR(7)   NOT NULL,
-    "home_team_points_scored" INT   NOT NULL,
-    "away_team_points_scored" INT   NOT NULL,
-    "away_jammer" VARCHAR(7)   NOT NULL,
-    "away_pivot" VARCHAR(7)   NOT NULL,
-    "away_blocker_1" VARCHAR(7)   NOT NULL,
-    "away_blocker_2" VARCHAR(7)   NOT NULL,
-    "away_blocker_3" VARCHAR(7)   NOT NULL,
-    "away_lead" BOOLEAN   NOT NULL,
-    "home_lead" BOOLEAN   NOT NULL,
-    "lost_lead" BOOLEAN   NOT NULL,
-    "called_jam_off" BOOLEAN   NOT NULL,
-    "seconds_to_lead" INT   NOT NULL,
-    "seconds_to_first_pass" INT   NOT NULL,
+    "jam_id" BIGSERIAL   ,
+    "game_id" BIGINT   ,
+    "jam_number" SMALLINT   ,
+    "period_number" SMALLINT,
+    "home_jammer" SMALLINT  ,
+    "home_pivot" SMALLINT   ,
+    "home_blocker_1" SMALLINT   ,
+    "home_blocker_2" SMALLINT  ,
+    "home_blocker_3" SMALLINT   ,
+    "home_team_points_scored" SMALLINT   ,
+    "away_team_points_scored" SMALLINT   ,
+    "away_jammer" SMALLINT   ,
+    "away_pivot" SMALLINT   ,
+    "away_blocker_1" SMALLINT   ,
+    "away_blocker_2" SMALLINT   ,
+    "away_blocker_3" SMALLINT   ,
+    "away_lead" BOOLEAN   ,
+    "home_lead" BOOLEAN   ,
+    "lost_lead" BOOLEAN   ,
+    "called_jam_off" BOOLEAN  ,
+    "seconds_to_lead" SMALLINT  ,
+    "seconds_to_first_pass" SMALLINT   ,
     CONSTRAINT "pk_jams" PRIMARY KEY (
         "jam_id"
      )
 );
 
 CREATE TABLE "penalties" (
-    "penalty_id" BIGSERIAL   NOT NULL,
-    "skater_id" VARCHAR(7)   NOT NULL,
-    "jam_id" INT   NOT NULL,
-    "penalty_type" VARCHAR   NOT NULL,
-    "occurences" INT   NOT NULL,
+    "penalty_id" BIGSERIAL   ,
+    "skater_id" SMALLINT   ,
+    "jam_id" BIGINT   ,
+    "penalty_type" VARCHAR   ,
+    "occurences" SMALLINT   ,
     CONSTRAINT "pk_penalties" PRIMARY KEY (
         "penalty_id"
      )
